@@ -26,6 +26,19 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Attach HEAD to a local branch
+        run: |
+          # actions/checkout leaves HEAD detached on release/tag events,
+          # which breaks tests that read GitRepository.Branch.
+          if ! git symbolic-ref -q HEAD > /dev/null; then
+            BRANCH="${{ github.event.release.target_commitish || github.ref_name }}"
+            # Fallback if target_commitish is a SHA, not a branch name
+            if echo "$BRANCH" | grep -qE '^[0-9a-f]{7,40}$'; then
+              BRANCH="ci-release"
+            fi
+            git switch -C "$BRANCH"
+          fi
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
