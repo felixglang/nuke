@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Nuke.CodeGeneration</RootNamespace>
+    <!-- Transitive NuGet.* 7.x has no netstandard2.0 target — runtime works via fallback -->
+    <NoWarn>$(NoWarn);NU1701</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
