@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <PackageId>fglang.$(MSBuildProjectName)</PackageId>
     <Description>The AKEless Build System for C#/.NET</Description>
     <Authors>Matthias Koch and contributors</Authors>
     <Copyright>Copyright $([System.DateTime]::Now.Year) Maintainers of NUKE</Copyright>
