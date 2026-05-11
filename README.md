@@ -7,7 +7,7 @@
 >
 > **Anpassungen ggü. Upstream:**
 > - Package-IDs auf `fglang.*` umgestellt (`Nuke.Common` → `fglang.Nuke.Common`, etc.)
-> - Sicherheitsupdates: `System.Security.Cryptography.Xml` 9.0.0 → 10.0.7 (CVE-2026-26171, CVE-2026-33116), `Scriban` 6.2.1 → 7.1.0 (kritische CVEs), diverse Patch-/Minor-Bumps
+> - Sicherheitsupdates: `System.Security.Cryptography.Xml` 9.0.0 → 10.0.7 (CVE-2026-26171, CVE-2026-33116), `Scriban` 6.2.1 → 7.1.0 (kritische CVEs), `NuGet.Packaging` 6.12.1 → 7.3.1 (GHSA-g4vj-cjjj-v7hg, CWE-345), diverse Patch-/Minor-Bumps
 > - Major-Updates: `Microsoft.CodeAnalysis` 4.12 → 5.3, `Microsoft.Build` 18.0.2 → 18.4.0, `coverlet` 6 → 10, `Microsoft.ApplicationInsights` 2 → 3, `YamlDotNet` 16 → 17, `Microsoft.SourceLink.GitHub` 8 → 10
 > - Eigener GitHub-Actions-Workflow [`nuget-release.yml`](.github/workflows/nuget-release.yml) für NuGet.org-Deployment (Trigger: GitHub Release oder manuell)
 > - Code-Fix für `Microsoft.Build.Framework.AbsolutePath`-Kollision in [`CodeGenerationTask.cs`](source/Nuke.MSBuildTasks/CodeGenerationTask.cs)
